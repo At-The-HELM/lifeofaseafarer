@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leadership, life, and the sea — the journey of a Captain guiding a vessel, a crew, and a lifestyle that few will ever experience.">
+    <title>Life of a Seafarer - Leadership Stories</title>
+    <style>
+        :root {
+            --color-primary: #1a4d5c;
+            --color-primary-light: #2a6f7d;
+            --color-accent: #d4a574;
+            --color-text: #2c3e50;
+            --color-text-light: #7f8c8d;
+            --color-bg: #f5f7fa;
+            --color-white: #ffffff;
+            --color-border: #e0e6ed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: var(--color-white);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--color-white);
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: var(--color-accent);
+        }
+
+        .private-btn {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .private-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Home Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: var(--color-white);
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-style: italic;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--color-accent);
+            padding-bottom: 1rem;
+        }
+
+        /* Bio Section */
+        .bio-container {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .bio-container h2 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .bio-container p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .portfolio-card {
+            background: var(--color-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-left: 5px solid var(--color-accent);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .portfolio-card h3 {
+            color: var(--color-primary);
+            padding: 1.5rem 1.5rem 0.5rem;
+        }
+
+        .portfolio-card p {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--color-text-light);
+        }
+
+        /* Blog Section */
+        .blog-post {
+            background: var(--color-white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .blog-post h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-date {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            background: var(--color-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: all 0.3s;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent, rgba(0,0,0,0.7));
+            color: var(--color-white);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Modal for Private Area */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background-color: var(--color-white);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .modal-content h2 {
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid var(--color-border);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .modal-buttons button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .modal-buttons .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .modal-buttons .btn-primary:hover {
+            background-color: var(--color-primary-light);
+        }
+
+        .modal-buttons .btn-secondary {
+            background-color: var(--color-border);
+            color: var(--color-text);
+        }
+
+        .modal-buttons .btn-secondary:hover {
+            background-color: #d0d0d0;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 1rem;
+            padding: 10px;
+            background-color: #fdeaea;
+            border-radius: 5px;
+            display: none;
+        }
+
+        /* Private Area */
+        .private-section {
+            background: linear-gradient(135deg, #fff5e6 0%, #fff9f0 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--color-accent);
+            margin-bottom: 2rem;
+        }
+
+        .private-section h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                padding: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="logo">⚓ Life of a Seafarer</div>
+            <nav>
+                <a onclick="showSection('home')">Home</a>
+                <a onclick="showSection('portfolio')">Portfolio</a>
+                <a onclick="showSection('blog')">Leadership Stories</a>
+                <a onclick="showSection('gallery')">Gallery</a>
+                <a class="private-btn" onclick="openPrivateArea()">Private Area</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="hero">
+            <div class="container">
+                <h1>Life of a Seafarer</h1>
+                <p>Leadership, Life, and the Sea</p>
+                <p class="hero-tagline">The journey of a Captain guiding a vessel, a crew, and a lifestyle that few will ever experience.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="showSection('portfolio')">Discover My Work</button>
+                    <button class="btn btn-secondary" onclick="showSection('blog')">Read My Stories</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="bio-container">
+                <h2>About Me</h2>
+                <p>I am a Master Mariner with extensive experience in the cruise industry. I have managed complex ship operations, coordinated professional teams, and maintained the highest standards of maritime safety and regulatory compliance.</p>
+                <p>Through this platform, I share my professional portfolio, my maritime leadership stories, and selected photographs from my voyages and experiences at sea.</p>
+                <p><strong>Expertise:</strong> Ship Operations • Crew Leadership • SOLAS/MARPOL Compliance • Vessel Maintenance • Maritime Safety • ECDIS Navigation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <h3>Master Mariner Certification</h3>
+                    <p>Professional qualification to command passenger vessels. Expertise in navigation, safety protocols, and operational management of large cruise ships.</p>
+                </div>
+                <div class="portfolio-card">
+                    <h3>Advanced ECDIS Navigation</h3>
+                    <p>Advanced certification in electronic navigation systems. Implementation of international protocols and operational use of modern navigational instrumentation.</p>
+                </div>
+                <div class="portfolio-card">
+                    <h3>Ship Operations & Management</h3>
+                    <p>Comprehensive experience as Captain and Staff Officer with Marella Cruises and MSC Cruises. Full responsibility for operational control and crew management.</p>
+                </div>
+                <div class="portfolio-card">
+                    <h3>SOLAS/MARPOL Compliance</h3>
+                    <p>Expertise in maritime safety regulations. Development of standardized incident management protocols and compliance documentation for international maritime standards.</p>
+                </div>
+                <div class="portfolio-card">
+                    <h3>Crew Leadership & Welfare</h3>
+                    <p>Development of crew wellness programs and leadership initiatives. Focus on improving quality of life and professional development for maritime personnel aboard ship.</p>
+                </div>
+                <div class="portfolio-card">
+                    <h3>Vessel Stability & Technical Reports</h3>
+                    <p>In-depth analysis of hydrostatic and dynamic stability in cruise vessels. Technical reports on critical operational factors and maritime best practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Stories Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <h2 class="section-title">Leadership Stories from the Bridge</h2>
+            
+            <div class="blog-post">
+                <h3>A Typical Day on the Bridge</h3>
+                <div class="blog-date">December 26, 2025</div>
+                <div class="blog-content">
+                    <p>Today was a calm day at sea. Weather conditions are stable with light winds and gentle seas. I began the day at 0600 hours with my bridge watch, checking the ship's course and speed. Our navigation is perfect according to the planned route...</p>
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <h3>The Foundation of Maritime Safety</h3>
+                <div class="blog-date">December 20, 2025</div>
+                <div class="blog-content">
+                    <p>Safety is the cornerstone of every maritime operation. As a Captain, my primary responsibility is ensuring that every crew member understands our safety protocols and is prepared to respond to any emergency situation. Through constant training and communication...</p>
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <h3>Barcelona: Reflections and Culture</h3>
+                <div class="blog-date">December 15, 2025</div>
+                <div class="blog-content">
+                    <p>Barcelona remains one of the most fascinating Mediterranean ports. Yesterday evening I had the opportunity to explore the Ramblas and admire Gaudí's extraordinary architecture. The combination of sea and city is always a remarkable sight, reminding me why this life at sea is so extraordinary...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title">Photo Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%231a4d5c' width='300' height='300'/%3E%3Ctext x='50%' y='50%' font-size='24' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3ESunset at Sea%3C/text%3E%3C/svg%3E" alt="Sunset at Sea">
+                    <div class="gallery-caption">Sunset in the Mediterranean</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%232a6f7d' width='300' height='300'/%3E%3Ctext x='50%' y='50%' font-size='24' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3EBridge View%3C/text%3E%3C/svg%3E" alt="Bridge View">
+                    <div class="gallery-caption">Command Center View</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23d4a574' width='300' height='300'/%3E%3Ctext x='50%' y='50%' font-size='24' fill='%231a4d5c' text-anchor='middle' dominant-baseline='middle'%3EPort Life%3C/text%3E%3C/svg%3E" alt="Port Life">
+                    <div class="gallery-caption">Port of Naples</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%231a4d5c' width='300' height='300'/%3E%3Ctext x='50%' y='50%' font-size='24' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3EShip Stern%3C/text%3E%3C/svg%3E" alt="Ship Stern">
+                    <div class="gallery-caption">Stern at Sunset</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%232a6f7d' width='300' height='300'/%3E%3Ctext x='50%' y='50%' font-size='24' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3ECrew at Work%3C/text%3E%3C/svg%3E" alt="Crew at Work">
+                    <div class="gallery-caption">Crew Operations</div>
+                </div>
+                <div class="gallery-item" onclick="toggleShipHandlingPhotos()" style="cursor: pointer;">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23d4a574' width='300' height='300'/%3E%3Ctext x='50%' y='50%' font-size='24' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3EShip Handling%3C/text%3E%3C/svg%3E" alt="Ship Handling">
+                    <div class="gallery-caption">Port & Ship Handling</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Area Modal -->
+    <div id="privateModal" class="modal">
+        <div class="modal-content">
+            <h2>🔐 Private Area</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--color-text-light);">Enter your password to access your private area with personal photos and journal entries.</p>
+            <form onsubmit="checkPassword(event)">
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+                <div class="error-message" id="errorMsg">Incorrect password. Please try again.</div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">Access</button>
+                    <button type="button" class="btn btn-secondary" onclick="closePrivateArea()">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Private Area Content -->
+    <section id="privateArea" class="section" style="padding: 2rem 0;">
+        <div class="container">
+            <h2 class="section-title">🔐 Private Area - For Your Eyes Only</h2>
+
+            <div class="private-section">
+                <h3>📸 Private Photo Archive</h3>
+                <p>Store all your personal photographs here — those you prefer not to share publicly but want to preserve and organize.</p>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                    <li>Personal crew photographs</li>
+                    <li>Private moments in port</li>
+                    <li>Family photos aboard ship</li>
+                    <li>Experimental photography</li>
+                </ul>
+            </div>
+
+            <div class="private-section">
+                <h3>📔 Personal Captain's Journal</h3>
+                <p>An intimate space to write your thoughts, personal reflections, and notes that remain between you and your portfolio.</p>
+                <p style="margin-top: 1rem;"><em>This is a completely private section where you can record your feelings, lessons learned, and personal experiences in your role as a Captain.</em></p>
+            </div>
+
+            <div class="private-section">
+                <h3>📝 Drafts & Articles in Progress</h3>
+                <p>Write and prepare your leadership stories here before deciding to publish them. Keep all your drafts organized until they're ready for the world.</p>
+                <p style="margin-top: 1rem; color: var(--color-primary); font-weight: bold;">✓ Take your time crafting content here</p>
+            </div>
+
+            <div class="private-section">
+                <h3>🔒 Confidential Documents</h3>
+                <p>Archive your personal documents, confidential technical notes, sensitive data, and information that should remain private.</p>
+                <p style="margin-top: 1rem; color: var(--color-text-light); font-size: 0.95rem;">Everything remains password-protected and visible only to you.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="closePrivateArea(); showSection('home')">← Return to Public Home</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Life of a Seafarer. All rights reserved. ⚓</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Leadership, life, and the sea — the journey of a Captain.</p>
+        </div>
+    </footer>
+
+    <script>
+        // IMPORTANT: Change this password to your own secure password!
+        const CORRECT_PASSWORD = 'capitano2025';
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function openPrivateArea() {
+            document.getElementById('privateModal').style.display = 'block';
+            document.getElementById('password').value = '';
+            document.getElementById('errorMsg').style.display = 'none';
+        }
+
+        function closePrivateArea() {
+            document.getElementById('privateModal').style.display = 'none';
+            document.getElementById('password').value = '';
+            document.getElementById('errorMsg').style.display = 'none';
+        }
+
+        function checkPassword(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            
+            if (password === CORRECT_PASSWORD) {
+                document.getElementById('privateModal').style.display = 'none';
+                showSection('privateArea');
+            } else {
+                document.getElementById('errorMsg').style.display = 'block';
+                document.getElementById('password').value = '';
+            }
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('privateModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('password').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    checkPassword(e);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
