@@ -96,6 +96,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             padding: 0 20px;
         }
 
+        /* Home Section */
         .hero {
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
             color: var(--color-white);
@@ -166,6 +167,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             color: var(--color-primary);
         }
 
+        /* Sections */
         .section {
             display: none;
             animation: fadeIn 0.5s;
@@ -189,6 +191,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             padding-bottom: 1rem;
         }
 
+        /* Bio Section */
         .bio-container {
             background: var(--color-white);
             padding: 2rem;
@@ -207,6 +210,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             line-height: 1.8;
         }
 
+        /* Portfolio Section */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -221,7 +225,6 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
             transition: all 0.3s;
             border-left: 5px solid var(--color-accent);
-            padding: 1.5rem;
         }
 
         .portfolio-card:hover {
@@ -231,13 +234,15 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
 
         .portfolio-card h3 {
             color: var(--color-primary);
-            margin-bottom: 0.5rem;
+            padding: 1.5rem 1.5rem 0.5rem;
         }
 
         .portfolio-card p {
+            padding: 0 1.5rem 1.5rem;
             color: var(--color-text-light);
         }
 
+        /* Blog Section */
         .blog-post {
             background: var(--color-white);
             padding: 2rem;
@@ -263,6 +268,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             color: var(--color-text);
         }
 
+        /* Gallery Section */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -308,6 +314,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             transform: translateY(0);
         }
 
+        /* Modal for Private Area */
         .modal {
             display: none;
             position: fixed;
@@ -326,10 +333,8 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             padding: 2rem;
             border-radius: 10px;
             width: 90%;
-            max-width: 800px;
+            max-width: 400px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            max-height: 90vh;
-            overflow-y: auto;
         }
 
         .modal-content h2 {
@@ -405,6 +410,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             display: none;
         }
 
+        /* Private Area */
         .private-section {
             background: linear-gradient(135deg, #fff5e6 0%, #fff9f0 100%);
             padding: 2rem;
@@ -418,13 +424,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             margin-bottom: 1rem;
         }
 
-        .close-modal-btn {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
+        /* Footer */
         footer {
             background-color: var(--color-primary);
             color: var(--color-white);
@@ -433,6 +433,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             margin-top: 3rem;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -469,6 +470,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
     </style>
 </head>
 <body>
+    <!-- Header & Navigation -->
     <header>
         <div class="header-container">
             <div class="logo">⚓ Life of a Seafarer</div>
@@ -482,6 +484,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
         </div>
     </header>
 
+    <!-- Home Section -->
     <section id="home" class="section active">
         <div class="hero">
             <div class="container">
@@ -505,6 +508,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
         </div>
     </section>
 
+    <!-- Portfolio Section -->
     <section id="portfolio" class="section">
         <div class="container">
             <h2 class="section-title">Professional Portfolio</h2>
@@ -529,13 +533,15 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
                     <h3>Crew Leadership & Welfare</h3>
                     <p>Development of crew wellness programs and leadership initiatives. Focus on improving quality of life and professional development for maritime personnel aboard ship.</p>
                 </div>
-                  <div class="portfolio-card"><h3>Sprinkler system </h3>
-                    <p>How Sprinkler system is working on the ship.</p>
+                <div class="portfolio-card">
+                    <h3>Vessel Stability & Technical Reports</h3>
+                    <p>In-depth analysis of hydrostatic and dynamic stability in cruise vessels. Technical reports on critical operational factors and maritime best practices.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Leadership Stories Section -->
     <section id="blog" class="section">
         <div class="container">
             <h2 class="section-title">Leadership Stories from the Bridge</h2>
@@ -566,75 +572,43 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
         </div>
     </section>
 
+    <!-- Gallery Section -->
     <section id="gallery" class="section">
         <div class="container">
             <h2 class="section-title">Photo Gallery</h2>
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="toggleSunsetPhotos()">
-                    <img src="gallery1.jpg" alt="Sunset at Sea">
+                <div class="gallery-item">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%231a4d5c' width='300' height='300'/%3E%3Ctext x='50%' y='50%' font-size='24' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3ESunset at Sea%3C/text%3E%3C/svg%3E" alt="Sunset at Sea">
                     <div class="gallery-caption">Sunset in the Mediterranean</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery2.jpg" alt="Bridge View">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%232a6f7d' width='300' height='300'/%3E%3Ctext x='50%' y='50%' font-size='24' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3EBridge View%3C/text%3E%3C/svg%3E" alt="Bridge View">
                     <div class="gallery-caption">Command Center View</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery3.jpg" alt="Port Life">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23d4a574' width='300' height='300'/%3E%3Ctext x='50%' y='50%' font-size='24' fill='%231a4d5c' text-anchor='middle' dominant-baseline='middle'%3EPort Life%3C/text%3E%3C/svg%3E" alt="Port Life">
                     <div class="gallery-caption">Port of Naples</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery4.jpg" alt="Ship Stern">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%231a4d5c' width='300' height='300'/%3E%3Ctext x='50%' y='50%' font-size='24' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3EShip Stern%3C/text%3E%3C/svg%3E" alt="Ship Stern">
                     <div class="gallery-caption">Stern at Sunset</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery5.jpg" alt="Crew at Work">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%232a6f7d' width='300' height='300'/%3E%3Ctext x='50%' y='50%' font-size='24' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3ECrew at Work%3C/text%3E%3C/svg%3E" alt="Crew at Work">
                     <div class="gallery-caption">Crew Operations</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="gallery6.jpg" alt="Port City">
-                    <div class="gallery-caption">Barcelona Morning</div>
+<div class="gallery-item">
+    <img src="photo1.jpg" alt="Port City">
+    <div class="gallery-caption">Las Palmas 27122025</div>
+</div>
+</div>
+
                 </div>
             </div>
-
         </div>
     </section>
 
-    <div id="sunsetModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                <h2 style="color: var(--color-primary); margin: 0;">🌅 Sunset at Sea Collection</h2>
-                <button onclick="closeSunsetModal()" style="background: var(--color-primary); color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold;">✕ Close</button>
-            </div>
-            
-            <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-                <div class="gallery-item">
-                    <img src="sunset1.jpg" alt="Sunset 1">
-                    <div class="gallery-caption">Golden Hour</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="sunset2.jpg" alt="Sunset 2">
-                    <div class="gallery-caption">Evening Light</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="sunset3.jpg" alt="Sunset 3">
-                    <div class="gallery-caption">Twilight Moment</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="sunset4.jpg" alt="Sunset 4">
-                    <div class="gallery-caption">Dusk Colors</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="sunset5.jpg" alt="Sunset 5">
-                    <div class="gallery-caption">Horizon's Glow</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="sunset6.jpg" alt="Sunset 6">
-                    <div class="gallery-caption">Peaceful Evening</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- Private Area Modal -->
     <div id="privateModal" class="modal">
         <div class="modal-content">
             <h2>🔐 Private Area</h2>
@@ -653,6 +627,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
         </div>
     </div>
 
+    <!-- Private Area Content -->
     <section id="privateArea" class="section" style="padding: 2rem 0;">
         <div class="container">
             <h2 class="section-title">🔐 Private Area - For Your Eyes Only</h2>
@@ -692,6 +667,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Life of a Seafarer. All rights reserved. ⚓</p>
@@ -700,6 +676,7 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
     </footer>
 
     <script>
+        // IMPORTANT: Change this password to your own secure password!
         const CORRECT_PASSWORD = 'YourSecurePassword2025';
 
         function showSection(sectionId) {
@@ -735,46 +712,19 @@ Description: Leadership, life, and the sea — the journey of a Captain guiding 
             }
         }
 
-        function toggleShipHandlingPhotos() {
-            document.getElementById('shipHandlingModal').style.display = 'block';
-        }
-
-        function closeShipHandlingModal() {
-            document.getElementById('shipHandlingModal').style.display = 'none';
-        }
-
-        function toggleSunsetPhotos() {
-            document.getElementById('sunsetModal').style.display = 'block';
-        }
-
-        function closeSunsetModal() {
-            document.getElementById('sunsetModal').style.display = 'none';
-        }
-
         window.onclick = function(event) {
-            const privateModal = document.getElementById('privateModal');
-            const shipModal = document.getElementById('shipHandlingModal');
-            const sunsetModal = document.getElementById('sunsetModal');
-            if (event.target == privateModal) {
-                privateModal.style.display = 'none';
-            }
-            if (event.target == shipModal) {
-                shipModal.style.display = 'none';
-            }
-            if (event.target == sunsetModal) {
-                sunsetModal.style.display = 'none';
+            const modal = document.getElementById('privateModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
             }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            const passwordInput = document.getElementById('password');
-            if (passwordInput) {
-                passwordInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        checkPassword(e);
-                    }
-                });
-            }
+            document.getElementById('password').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    checkPassword(e);
+                }
+            });
         });
     </script>
 </body>
